@@ -175,7 +175,7 @@
         });
         bounds_group.addLayer(layer_uso_suelo_2);
         map.addLayer(layer_uso_suelo_2);
-        function pop_sitios_interes_3(feature, layer) {
+        function pop_3115_sitm_puntos_parada(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['osm_id'] !== null ? Autolinker.link(feature.properties['osm_id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
@@ -229,7 +229,25 @@
         });
         bounds_group.addLayer(layer_3115_sitm_puntos_parada);
         map.addLayer(layer_3115_sitm_puntos_parada);
-        function style_sitios_interes_3_0() {
+        function pop_sitios_interes_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? Autolinker.link(feature.properties['osm_id'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['timestamp'] !== null ? Autolinker.link(feature.properties['timestamp'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['name'] !== null ? Autolinker.link(feature.properties['name'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(feature.properties['type'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }        
+
+		function style_sitios_interes_3_0() {
             return {
                 pane: 'pane_sitios_interes_3',
                 radius: 4.0,
