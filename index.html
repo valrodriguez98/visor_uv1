@@ -193,6 +193,42 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
+        function style_3115_sitm_puntos_parada_0() {
+            return {
+                pane: 'pane_3115_sitm_puntos_parada',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(214,120,214,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_3115_sitm_puntos_parada');
+        map.getPane('pane_3115_sitm_puntos_parada').style.zIndex = 403;
+        map.getPane('pane_3115_sitm_puntos_parada').style['mix-blend-mode'] = 'normal';
+        var layer_3115_sitm_puntos_parada = new L.shape(3115_sitm_puntos_parada, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'shape_3115_sitm_puntos_parada',
+            layerName: 'layer_3115_sitm_puntos_parada',
+            pane: 'pane_3115_sitm_puntos_parada',
+            onEachFeature: pop_3115_sitm_puntos_parada,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_3115_sitm_puntos_parada(feature));
+            },
+        });
+        bounds_group.addLayer(layer_3115_sitm_puntos_parada);
+        map.addLayer(layer_3115_sitm_puntos_parada);
         function style_sitios_interes_3_0() {
             return {
                 pane: 'pane_sitios_interes_3',
